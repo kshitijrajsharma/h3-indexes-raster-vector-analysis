@@ -33,9 +33,13 @@ git clone https://github.com/hotosm/raw-data-api.git
 wget https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf
 ```
 
-4. Install h3 
+4. Install h3 deps
 
-5. Fire up the data loading
+```bash
+sudo apt install pgxnclient cmake
+```
+
+6. Fire up the data loading
 
 ```log
 (env) krschap@krs-tuxedo:~/hotosm/raw-data-api/backend$ osm2pgsql \
@@ -87,8 +91,28 @@ Processing: Node(9964518k 1815.4k/s) Way(1110570k 94.71k/s) Relation(13410520 10
 2025-06-17 03:20:17  Storing properties to table '"public"."osm2pgsql_properties"'.
 2025-06-17 03:20:17  osm2pgsql took 42000s (11h 40m 0s) overall.
 ```
+6. Enable POSTGIS and h3 extension
+```sql
+Create extension postgis;
+create extension h3;
+create extension h3_postgis CASCADE;
+```
 
-6. 
+
+7. Update the h3 column in your table
+
+You can use this script for large data https://github.com/hotosm/raw-data-api/blob/develop/backend/field_update or simply fire up the query to populate them
+
+```bash
+python field_update --target ways_poly
+```
+or 
+```sql
+ALTER TABLE buildings ADD COLUMN h3 h3index GENERATED ALWAYS AS (h3_lat_lng_to_cell(ST_Centroid(geom), 6)) STORED;
+```
+
+8. Enjoy 
+
 ## Connect 
 
 Connect with Speakers : 
