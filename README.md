@@ -9,7 +9,8 @@ Using h3 indexes for raster and vector analysis, State of the Map 2025
 - DB Schema used from : https://github.com/hotosm/raw-data-api 
 - Raster Analysis to get h3 cells from COG : https://github.com/kshitijrajsharma/cog2h3/tree/main 
 - Read Blog : https://dev.to/krschap/raster-analysis-using-uber-h3-indexes-and-postgresql-57g9
-- Slides : Coming UP 
+- Osm2pgsql : https://osm2pgsql.org/ 
+- Slides : Coming Up 
 
 ## Connect 
 
