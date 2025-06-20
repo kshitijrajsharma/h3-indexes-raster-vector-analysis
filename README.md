@@ -7,4 +7,4 @@ Performance Comparison : https://github.com/kshitijrajsharma/pg_benchmark_A4/blo
 Read Blog : https://dev.to/krschap/raster-analysis-using-uber-h3-indexes-and-postgresql-57g9 
 
 
-Contact Speakers : 
+Connect with Speakers : 
