@@ -116,5 +116,7 @@ ALTER TABLE buildings ADD COLUMN h3 h3index GENERATED ALWAYS AS (h3_lat_lng_to_c
 ## Connect 
 
 Connect with Speakers : 
+
 Deepak Pradhan 
+
 Kshitij Raj Sharma 
